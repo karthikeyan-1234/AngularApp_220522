@@ -39,4 +39,8 @@ export class AppComponent {
   getCitiesData(){
     this.service.getCities().subscribe((res : any) => this.cities = res);
   }
+
+  GetToken(){
+    this.service.getToken().subscribe((res: any) => console.log(res));
+  }
 }

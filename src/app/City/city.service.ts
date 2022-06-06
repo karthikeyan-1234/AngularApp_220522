@@ -17,6 +17,11 @@ export class CityService {
     return this.http.get<City[]>(this.cityUrl).pipe(catchError(this.handleError))
   }
 
+  getToken():Observable<any>{
+    var user = {name:"Arjun",password:"123456"};
+    return this.http.post<any>("https://localhost:5021/Ocelot/GetToken",user).pipe(catchError(this.handleError))
+  }
+
   private handleError(err : any) {  
     let errorMessage: string;  
     if (err.error instanceof ErrorEvent) {  
