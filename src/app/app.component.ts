@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Employee } from './Employee/employee';
-import { EmployeeService } from './Employee/employee.service';
 import * as signalR from '@microsoft/signalr'; 
-import { environment } from './Environments/environment';
+import { environment } from 'src/environments/environment';
+import { City } from './City/city';
+import { CityService } from './City/city.service';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +11,18 @@ import { environment } from './Environments/environment';
 })
 export class AppComponent {
   title = 'SignalR';
-  employees : Employee[] = [];
+  cities : City[] = [];
 
-  constructor(private service:EmployeeService){}
+  constructor(private service:CityService){}
 
   ngOnInit(){
-
-    this.getEmployeeData();
+    this.getCitiesData();
 
     const connection = new signalR.HubConnectionBuilder()  
       .configureLogging(signalR.LogLevel.Information)  
-      .withUrl(environment.baseUrl + 'notify')  
+      .withUrl(environment.SignalRUrl + 'notify',{skipNegotiation: true,
+        transport: signalR.HttpTransportType.WebSockets})  
       .build();
-
-    console.log(environment.baseUrl + 'notify');
   
     connection.start().then(function () {  
       console.log('SignalR Connected!');  
@@ -33,14 +31,12 @@ export class AppComponent {
     });  
 
     connection.on("BroadcastMessage", () => {  
-      this.getEmployeeData();  
+      this.getCitiesData();  
     });
-
-
 
   }
 
-  getEmployeeData(){
-    this.service.getEmployees().subscribe((res : any) => this.employees = res)
+  getCitiesData(){
+    this.service.getCities().subscribe((res : any) => this.cities = res);
   }
 }

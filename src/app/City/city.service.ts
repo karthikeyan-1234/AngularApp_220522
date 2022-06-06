@@ -1,20 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { environment } from '../Environments/environment';
-import { Employee } from './employee';
+import { environment } from 'src/environments/environment';
+import { City } from './city';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
+export class CityService {
+
+  private cityUrl = environment.OcelotUrl + 'GetAllCities';
 
   constructor(private http:HttpClient) { }
 
-  private employeesUrl = environment.baseUrl + 'api/Employee/GetEmployees';  
-
-  getEmployees():Observable<Employee[]>{
-    return this.http.get<Employee[]>(this.employeesUrl).pipe(catchError(this.handleError))
+  getCities():Observable<City[]>{
+    return this.http.get<City[]>(this.cityUrl).pipe(catchError(this.handleError))
   }
 
   private handleError(err : any) {  
