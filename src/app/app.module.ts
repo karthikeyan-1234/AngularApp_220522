@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CityService } from './City/city.service';
+import { CityService } from './Models/City/city.service';
 
 @NgModule({
   declarations: [

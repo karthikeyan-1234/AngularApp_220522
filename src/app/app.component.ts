@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import * as signalR from '@microsoft/signalr'; 
 import { environment } from 'src/environments/environment';
-import { City } from './City/city';
-import { CityService } from './City/city.service';
+import { City } from './Models/City/city';
+import { CityService } from './Models/City/city.service';
 
 @Component({
   selector: 'app-root',
