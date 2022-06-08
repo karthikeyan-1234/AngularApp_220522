@@ -12,6 +12,7 @@ import { CityService } from './Models/City/city.service';
 export class AppComponent {
   title = 'SignalR';
   cities : City[] = [];
+  count = 0;
 
   constructor(private service:CityService){}
 
@@ -37,7 +38,7 @@ export class AppComponent {
   }
 
   getCitiesData(){
-    this.service.getCities().subscribe((res : any) => this.cities = res);
+    this.service.getCities().subscribe((res : any) => {this.cities = res;this.count = this.cities.length;});
   }
 
   GetToken(){
