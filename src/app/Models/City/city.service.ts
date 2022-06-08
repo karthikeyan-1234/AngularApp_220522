@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -14,7 +14,8 @@ export class CityService {
   constructor(private http:HttpClient) { }
 
   getCities():Observable<City[]>{
-    return this.http.get<City[]>(this.cityUrl).pipe(catchError(this.handleError))
+    const headers= new HttpHeaders().set('Accept-Language', 'ta-IN');
+    return this.http.get<City[]>(this.cityUrl,{ 'headers': headers }).pipe(catchError(this.handleError))
   }
 
   getToken():Observable<any>{
