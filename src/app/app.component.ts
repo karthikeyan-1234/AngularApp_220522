@@ -43,6 +43,7 @@ export class AppComponent {
   }
 
   SetLanguage(){
+    
     console.log("Changing the Language....");
     this.getCitiesData();
   }
