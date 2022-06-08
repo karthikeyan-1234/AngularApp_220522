@@ -17,6 +17,7 @@ export class AppComponent {
   constructor(private service:CityService){}
 
   ngOnInit(){
+    localStorage.setItem("lang","en-US");
     this.getCitiesData();
 
     const connection = new signalR.HubConnectionBuilder()  
@@ -38,10 +39,11 @@ export class AppComponent {
   }
 
   getCitiesData(){
-    this.service.getCities().subscribe((res : any) => {this.cities = res;this.count = this.cities.length;});
+    this.service.getCities().subscribe((res : any) => {this.cities = res;this.count = this.cities.length; console.log("Data changed..!!");});
   }
 
-  GetToken(){
-    this.service.getToken().subscribe((res: any) => console.log(res));
+  SetLanguage(){
+    console.log("Changing the Language....");
+    this.getCitiesData();
   }
 }
