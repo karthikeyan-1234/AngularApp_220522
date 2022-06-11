@@ -6,10 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JwtInterceptor } from './Common/jwt.interceptor';
 import { CityService } from './Models/City/city.service';
+import { MessagesComponent } from './messages/messages.component';
+import { CitiesComponent } from './cities/cities.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MessagesComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,

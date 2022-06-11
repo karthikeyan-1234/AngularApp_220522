@@ -1,0 +1,21 @@
+<div style="float:left">
+    <span><img src="./assets/Images/bell.png" height="20px"><sup>{{count}}</sup></span>
+  </div>
+  <div>
+  <table>
+    <tbody>
+      <tr *ngFor="let city of cities">
+        <td>{{city.id}}</td>  <td>{{city.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <br>
+  <button (click)="SetLanguage()">Change Language</button>
+</div>
+
+<hr>
+
+  <div style="float:left">
+    <app-messages></app-messages>
+  </div>
