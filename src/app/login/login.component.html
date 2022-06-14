@@ -1,0 +1,37 @@
+<div class="topMast">
+    <div class="topLabel">
+        <label>Practice System</label>
+    </div>
+</div>
+
+<div class="bkGround">
+    <div class="centreBlock table">
+        <div class="row">
+            <div class="col-sm-2">
+                <label>User Name</label>
+            </div>
+            <div class="col-sm-2">
+                <input [(ngModel)]="username" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Password</label>
+            </div>
+            <div class="col-sm-2">
+                <input [(ngModel)]="password" type="password" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <button (click)="checkLogin()">Login</button>
+            </div>
+            <div class="col-sm-2">
+                <button>Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+

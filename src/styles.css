@@ -13,3 +13,31 @@
   
     font: 10px Arial, sans-serif;  
 }
+
+.bkGround{
+    height: 100vh;
+    margin: 0;
+    background-color: aqua;
+}
+
+.centreBlock{
+    float: left;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 900px;
+}
+
+.topMast{
+    height: 50px;
+    background-color: brown;
+}
+
+.topLabel{
+    margin-top: 50px;
+    margin-left: 50px;
+    color: white;
+}
+
+.row{
+    margin-top: 20px;
+}

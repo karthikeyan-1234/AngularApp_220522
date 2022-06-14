@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as signalR from '@microsoft/signalr';
 import { environment } from 'src/environments/environment';
 import { City } from '../Models/city/city';
@@ -16,7 +17,7 @@ export class CitiesComponent implements OnInit {
   count = 0;
   connection : signalR.HubConnection | undefined;
 
-  constructor(private service:CityService){}
+  constructor(private service:CityService,private router:Router){}
 
   ngOnInit(){
     localStorage.setItem("lang","en-US");
@@ -50,5 +51,8 @@ export class CitiesComponent implements OnInit {
     this.getCitiesData();
     console.log(this.service.langFlag);
   }
+
+  LogOut(){
+    localStorage.clear();  }
 
 }

@@ -8,19 +8,24 @@ import { JwtInterceptor } from './common/jwt.interceptor';
 import { CityService } from './services/city.service';
 import { MessagesComponent } from './messages/messages.component';
 import { CitiesComponent } from './cities/cities.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    CitiesComponent
+    CitiesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [CityService,{
+  providers: [BnNgIdleService, CityService,{
     provide: HTTP_INTERCEPTORS,useClass: JwtInterceptor, multi: true
   }],
   bootstrap: [AppComponent]
