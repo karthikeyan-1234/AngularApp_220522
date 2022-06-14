@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class JwtInterceptor implements HttpInterceptor {
 
 //This adds a jwt token to the http request
-
+//Only when HttpClient is used
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
