@@ -33,6 +33,6 @@ export class MessagesComponent implements OnInit {
 
 
   join = () => this.connection?.send("Join");
-  message = () => this.connection?.send("Message");
+  message = () => this.connection?.send("Message","Hello");
 
 }
