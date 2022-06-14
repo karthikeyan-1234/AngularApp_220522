@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { JwtInterceptor } from './Common/jwt.interceptor';
-import { CityService } from './Models/City/city.service';
+import { JwtInterceptor } from './common/jwt.interceptor';
+import { CityService } from './services/city.service';
 import { MessagesComponent } from './messages/messages.component';
 import { CitiesComponent } from './cities/cities.component';
 
